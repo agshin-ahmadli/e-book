@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/books
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: '0000'
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+
+  mail:
+    host: localhost
+    port: 1025
+    username: aka
+    password: aka
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable:
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: KywJJeoPMZwak4jeNyasAa5bqFGxgB1VXp8TReAFd5V3zhq71uHC
+      expiration: 8552
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+  file:
+    upload:
+      photos-output-path: ./uploads
